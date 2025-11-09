@@ -9,12 +9,13 @@ class Album:
         Album.discografia.append(self)
         
     def __str__(self):
-        return f"{self.nome} | {self.elemento} | {self.ano}"
+        return f"{self._nome} | {self._elemento} | {self._ano}"
     
-    def lista_albums (): 
+    @classmethod
+    def lista_albums (cls): 
         print("--- Discografia ---")
         print(f"{'Nome do Album'.ljust(15)} | {'Elemento'.ljust(15)} | {'Ano'.ljust(15)} | {'Lançamento'.ljust(15)}")
-        for album in Album.discografia:
+        for album in cls.discografia:
             print(f"{album._nome.ljust(15)} | {album._elemento.ljust(15)} | {str(album._ano).ljust(15)} | {album.lancado.ljust(15)}")
             
     @property
